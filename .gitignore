@@ -1,0 +1,80 @@
+# ======================
+# macOS
+# ======================
+.DS_Store
+
+# ======================
+# Root
+# ======================
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ======================
+# Laravel Backend
+# ======================
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+backend/vendor/
+backend/node_modules/
+
+backend/storage/*.key
+backend/storage/logs/*
+backend/storage/framework/cache/*
+backend/storage/framework/sessions/*
+backend/storage/framework/testing/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*
+!backend/bootstrap/cache/.gitignore
+
+backend/public/storage
+
+# IDE
+backend/.phpunit.result.cache
+
+# ======================
+# Next.js Frontend
+# ======================
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+
+# Build files
+frontend/build/
+frontend/dist/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# ======================
+# Editors
+# ======================
+.vscode/
+.idea/
+*.swp
+
+# ======================
+# Tests
+# ======================
+coverage/
+
+# ======================
+# Misc
+# ======================
+*.log

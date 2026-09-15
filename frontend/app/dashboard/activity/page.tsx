@@ -1,0 +1,5 @@
+"use client";
+import {useEffect,useState} from "react";
+import {getActivity} from "@/services/workService";
+import AppIcon from "@/components/AppIcon";
+export default function ActivityPage(){const [items,setItems]=useState<any[]>([]),[loading,setLoading]=useState(true);useEffect(()=>{getActivity().then(r=>setItems(r.data.data||[])).finally(()=>setLoading(false))},[]);return <div className="work-page narrow-page"><div className="work-page-head"><div><span className="eyebrow">Audit trail</span><h1>Activity</h1><p>A chronological record of meaningful changes, comments and work updates.</p></div></div>{loading?<div className="work-loading">Loading activity…</div>:<div className="activity-feed">{items.map(a=><article key={a.id}><div className="activity-avatar">{a.actor?.name?.charAt(0)||<AppIcon name="activity"/>}</div><div><div className="activity-line"><strong>{a.actor?.name||'System'}</strong><span>{a.description}</span></div><time>{new Date(a.created_at).toLocaleString()}</time></div></article>)}{!items.length&&<div className="empty-state">No activity recorded yet.</div>}</div>}</div>}
